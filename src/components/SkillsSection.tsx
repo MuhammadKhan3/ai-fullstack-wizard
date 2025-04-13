@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 type SkillCategory = {
@@ -107,11 +106,7 @@ const SkillsSection = () => {
               ?.skills.map((skill, index) => (
                 <div 
                   key={skill.name} 
-                  className="bg-white p-6 rounded-lg shadow-md card-hover"
-                  style={{ 
-                    animationDelay: `${index * 0.1}s`,
-                    opacity: 0
-                  }}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                   className="bg-white p-6 rounded-lg shadow-md card-hover animate-fade-in"
                 >
                   <div className="flex justify-between items-center mb-3">

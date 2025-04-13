@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Twitter } from "lucide-react";
+import ProfilePicture from "./ProfilePicture";
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
@@ -44,9 +45,18 @@ const HeroSection = () => {
       className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-b from-white to-blue-50 section-padding pt-24"
     >
       <div className="container mx-auto text-center max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-          Hi, I'm <span className="heading-gradient">A Certified Developer</span>
-        </h1>
+        <div className="flex flex-col items-center mb-8">
+          <ProfilePicture 
+            src="/placeholder.svg" 
+            alt="Developer Profile"
+            size="xl"
+            className="mb-6 shadow-lg animate-fade-in"
+          />
+          
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            Hi, I'm <span className="heading-gradient">A Certified Developer</span>
+          </h1>
+        </div>
         
         <div className="h-10 md:h-16 mb-6">
           <span className="text-2xl md:text-4xl font-semibold text-portfolio-secondary">
@@ -63,7 +73,7 @@ const HeroSection = () => {
           Specializing in MERN stack, Python, and AI-powered systems.
         </p>
         
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-10">
           <a 
             href="#projects" 
             className="bg-portfolio-primary hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-md transition duration-300 shadow-md hover:shadow-lg"
@@ -76,6 +86,25 @@ const HeroSection = () => {
           >
             Contact Me
           </a>
+        </div>
+        
+        <div className="flex justify-center space-x-4 mb-16">
+          {[
+            { icon: Github, href: "https://github.com", label: "GitHub Profile" },
+            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn Profile" },
+            { icon: Twitter, href: "https://twitter.com", label: "Twitter Profile" }
+          ].map((social, index) => (
+            <a 
+              key={index}
+              href={social.href}
+              aria-label={social.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-portfolio-gray hover:text-portfolio-primary"
+            >
+              <social.icon size={24} />
+            </a>
+          ))}
         </div>
         
         <div className="absolute bottom-10 left-0 right-0 mx-auto animate-bounce text-center">
