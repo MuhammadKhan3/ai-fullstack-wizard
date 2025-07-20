@@ -9,10 +9,27 @@ const AboutSection = () => {
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">About Me</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 shadow-lg"></div>
-          <p className="text-lg text-foreground/80 max-w-3xl mx-auto font-medium">
-            A seasoned Full Stack Developer and GEN AI Engineer with over 4 years of experience,
-            specializing in building robust and scalable solutions.
-          </p>
+          <div className="space-y-4 max-w-4xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
+                <span className="text-primary font-semibold">✅ Top 10% in Website Development</span>
+              </div>
+              <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
+                <span className="text-primary font-semibold">✅ 4+ Years of Experience</span>
+              </div>
+              <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
+                <span className="text-primary font-semibold">✅ 25+ Projects Completed</span>
+              </div>
+            </div>
+            <p className="text-lg text-foreground/80 font-medium leading-relaxed">
+              As a seasoned Full Stack Developer with over 4 years of experience, I specialize in building robust and scalable solutions using the MERN stack and Python. My expertise spans monolithic architectures, microservices, and AI-powered systems, delivering impactful results across a wide range of industries.
+            </p>
+            <div className="flex justify-center">
+              <a href="mailto:muhammadkh303@gmail.com" className="text-primary hover:text-secondary transition-colors font-medium">
+                📧 muhammadkh303@gmail.com
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -98,6 +115,62 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Project Highlights Section */}
+        <div className="mt-16 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
+          <h3 className="text-2xl font-bold text-center mb-8 text-primary">🌟 Highlights of My Work</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "POS System Optimization",
+                description: "Enhanced a POS system to support 1,000+ retail locations, managing 1 million requests efficiently.",
+                icon: "🏪"
+              },
+              {
+                title: "AI ChatBot SDK",
+                description: "Designed a flexible AI ChatBot SDK that integrates into websites, providing intelligent and responsive interactions.",
+                icon: "🤖"
+              },
+              {
+                title: "Gaming Solution",
+                description: "Developed a real-time axe-throw computer vision detection system integrated with an admin portal.",
+                icon: "🎯"
+              },
+              {
+                title: "Event Management System",
+                description: "Streamlined player check-ins/check-outs for large-scale events within a 500-meter radius.",
+                icon: "📅"
+              }
+            ].map((project, index) => (
+              <div key={index} className="bg-card border border-primary/30 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
+                <div className="flex items-start space-x-4">
+                  <span className="text-3xl">{project.icon}</span>
+                  <div>
+                    <h4 className="font-semibold text-lg text-primary mb-2">{project.title}</h4>
+                    <p className="text-foreground/80 text-sm leading-relaxed">{project.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Achievements Section */}
+        <div className="mt-12 text-center">
+          <h3 className="text-2xl font-bold mb-6 text-primary">🏆 Achievements</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              "Delivered 25 successful projects completed",
+              "Designed systems capable of handling 1 million+ transactions", 
+              "Delivered 5 AI-driven solutions, including legal assistants, ChatBots and personalized sizing systems"
+            ].map((achievement, index) => (
+              <div key={index} className="bg-primary/10 border border-primary/30 rounded-lg p-6 shadow-md backdrop-blur-sm">
+                <div className="text-2xl mb-3">🚀</div>
+                <p className="text-foreground/90 font-medium">{achievement}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
