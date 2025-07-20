@@ -1,8 +1,10 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 
 interface ProjectCardProps {
+  id: number;
   title: string;
   shortDescription: string;
   description: string[];
@@ -11,6 +13,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({
+  id,
   title,
   shortDescription,
   description,
@@ -93,13 +96,13 @@ const ProjectCard = ({
             )}
           </button>
           
-          <a
-            href="#"
+          <Link
+            to={`/project/${id}`}
             className="text-sm flex items-center text-portfolio-primary hover:text-portfolio-secondary transition-colors"
           >
             <span>View Details</span>
             <ExternalLink size={16} className="ml-1" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
