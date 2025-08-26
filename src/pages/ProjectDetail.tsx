@@ -209,10 +209,10 @@ const ProjectDetail = () => {
                   <ExternalLink size={16} className="mr-2" />
                   View Live Demo
                 </button>
-                <button className="w-full border border-border hover:bg-accent text-foreground py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center">
+                {/* <button className="w-full border border-border hover:bg-accent text-foreground py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center">
                   <Github size={16} className="mr-2" />
                   View Source Code
-                </button>
+                </button> */}
               </div>
             </div>
 
