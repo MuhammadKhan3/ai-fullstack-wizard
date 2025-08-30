@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { socialPlatforms } from "@/constants";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -65,7 +66,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-lg mb-1">Email</h4>
                     <a href="mailto:contact@example.com" className="text-portfolio-gray hover:text-portfolio-primary transition-colors">
-                      contact@example.com
+                      muhammadkh303@gmail.com
                     </a>
                   </div>
                 </div>
@@ -75,7 +76,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-lg mb-1">Location</h4>
                     <p className="text-portfolio-gray">
-                      Available for remote work worldwide
+                      Available for work worldwide
                     </p>
                   </div>
                 </div>
@@ -85,13 +86,13 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-lg mb-1">Social</h4>
                     <div className="flex space-x-4 mt-2">
-                      {["GitHub", "LinkedIn", "Twitter"].map((platform) => (
+                      {socialPlatforms.map((platform:{href:string,name:string}) => (
                         <a
-                          key={platform}
+                          key={platform.href}
                           href="#"
                           className="text-portfolio-gray hover:text-portfolio-primary transition-colors"
                         >
-                          {platform}
+                          {platform.name}
                         </a>
                       ))}
                     </div>
@@ -102,7 +103,7 @@ const ContactSection = () => {
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <h4 className="font-medium text-lg mb-3">Availability</h4>
                 <p className="text-portfolio-gray mb-4">
-                  I'm currently available for freelance work and full-time positions.
+                  I'm currently available for  full-time positions.
                 </p>
                 <div className="bg-green-100 text-green-800 px-4 py-3 rounded-lg text-sm">
                   <span className="font-medium">Currently Available</span> - Ready to start your project!

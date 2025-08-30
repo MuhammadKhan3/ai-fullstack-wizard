@@ -1,5 +1,5 @@
 
-import { Trophy, Users, Zap, Check, Award, Briefcase, Gift, Clock } from "lucide-react";
+import { Trophy, Users, Zap, Check, Award, Briefcase, Gift, Clock, Database } from "lucide-react";
 import ProfilePicture from "./ProfilePicture";
 
 const AboutSection = () => {
@@ -12,20 +12,23 @@ const AboutSection = () => {
           <div className="space-y-4 max-w-4xl mx-auto">
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
-                <span className="text-primary font-semibold">✅ Top 10% in Website Development</span>
+                <span className="text-primary font-semibold">✅ Website Development</span>
               </div>
               <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
-                <span className="text-primary font-semibold">✅ 4+ Years of Experience</span>
+                <span className="text-primary font-semibold">✅ 2.5+ Years of Experience</span>
               </div>
-              <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
-                <span className="text-primary font-semibold">✅ 25+ Projects Completed</span>
-              </div>
+              {/* <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
+                <span className="text-primary font-semibold">✅ 20 Projects Completed</span>
+              </div> */}
             </div>
             <p className="text-lg text-foreground/80 font-medium leading-relaxed">
-              As a seasoned Full Stack Developer with over 4 years of experience, I specialize in building robust and scalable solutions using the MERN stack and Python. My expertise spans monolithic architectures, microservices, and AI-powered systems, delivering impactful results across a wide range of industries.
+            I’m a Full-Stack Developer with 2.5 years of experience building fast, scalable web applications and backend systems. I work with
+            modern tools like React, Next.js, Node.js, TypeScript, and Python. I’ve developed POS  printing module, POS reporting
+            dashboard, HRMS platform,admin portal,SDK, Chrome extension, and real-time chat apps, with some experience
+            in aws and third-party integrations
             </p>
             <div className="flex justify-center">
-              <a href="mailto:muhammadkh303@gmail.com" className="text-primary hover:text-secondary transition-colors font-medium">
+              <a href="mailto:muhammadkh303@gmail.com" className="text-primary hover:text-blue-900 transition-colors font-medium">
                 📧 muhammadkh303@gmail.com
               </a>
             </div>
@@ -46,10 +49,10 @@ const AboutSection = () => {
             
             <div className="grid grid-cols-2 gap-6 w-full mt-8">
               {[
-                { icon: Trophy, text: "25+ Projects Completed", color: "text-amber-500" },
-                { icon: Zap, text: "5 AI Projects Completed", color: "text-blue-500" },
-                { icon: Users, text: "Remote Pair-Programming", color: "text-green-500" },
-                { icon: Award, text: "Top 10% in Web Development", color: "text-purple-500" }
+                { icon: Trophy, text: "15+ Projects Completed", color: "text-amber-500" },
+                { icon: Zap, text: "2 AI Projects Completed", color: "text-blue-500" },
+                { icon: Users, text: "Agile Collaboration", color: "text-green-500" },
+                { icon: Award, text: "Excellence in Web Development", color: "text-purple-500" }
               ].map((item, index) => (
                  <div key={index} className="flex items-center p-4 bg-card border border-primary/20 rounded-lg shadow-md card-hover backdrop-blur-sm">
                   <item.icon size={24} className={`${item.color} mr-3`} />
@@ -89,14 +92,14 @@ const AboutSection = () => {
                   description: "Proficient in React.js, Node.js, Express.js, MySQL, and MongoDB, with expertise in creating responsive and user-friendly applications."
                 },
                 {
-                  icon: Zap,
-                  title: "AI & Machine Learning",
-                  description: "Generative AI and Retrieval-Augmented Generation (RAG) for advanced AI solutions."
+                  icon: Database,
+                  title: "Database Management",
+                  description: "Proficient in MySQL,PostgreSQL, MongoDB, and database optimization for high-performance applications."
                 },
                 {
                   icon: Gift,
                   title: "SaaS Platforms",
-                  description: "Built scalable, AI-integrated platforms tailored to business needs."
+                  description: "Built scalable  platforms tailored to business needs."
                 },
                 {
                   icon: Clock,
@@ -139,8 +142,8 @@ const AboutSection = () => {
                 icon: "🎯"
               },
               {
-                title: "Event Management System",
-                description: "Streamlined player check-ins/check-outs for large-scale events within a 500-meter radius.",
+                title: "Reporting Tool",
+                description: "Reporting tool for restaurants to authenticate POS systems, export transaction data, and manage millions of records with advanced dashboards",
                 icon: "📅"
               }
             ].map((project, index) => (
@@ -162,9 +165,9 @@ const AboutSection = () => {
           <h3 className="text-2xl font-bold mb-6 text-primary">🏆 Achievements</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              "Delivered 25 successful projects completed",
+              "Delivered 15+ successful projects completed",
               "Designed systems capable of handling 1 million+ transactions", 
-              "Delivered 5 AI-driven solutions, including legal assistants, ChatBots and personalized sizing systems"
+              "Delivered 2 AI solutions, including legal assistants, ChatBots and personalized sizing systems"
             ].map((achievement, index) => (
               <div key={index} className="bg-primary/10 border border-primary/30 rounded-lg p-6 shadow-md backdrop-blur-sm">
                 <div className="text-2xl mb-3">🚀</div>

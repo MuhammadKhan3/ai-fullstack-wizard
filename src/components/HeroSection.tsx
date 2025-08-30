@@ -2,10 +2,11 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, Github, Linkedin, Twitter } from "lucide-react";
 import ProfilePicture from "./ProfilePicture";
+import { socialPlatforms } from "@/constants";
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
-  const roles = ["Full Stack Developer", "AI Engineer", "Cloud Expert"];
+  const roles = ["Full Stack Developer","Python Developer"];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [delta, setDelta] = useState(200 - Math.random() * 100);
@@ -69,8 +70,8 @@ const HeroSection = () => {
         </div>
         
         <p className="text-lg md:text-xl text-portfolio-gray mb-10 max-w-2xl mx-auto">
-          With over 4 years of experience in building robust and scalable solutions.
-          Specializing in MERN stack, Python, and AI-powered systems.
+          With over 2.5 years of experience in building robust and scalable solutions.
+          Specializing in MERN stack, Python systems.
         </p>
         
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-10">
@@ -89,15 +90,11 @@ const HeroSection = () => {
         </div>
         
         <div className="flex justify-center space-x-4 mb-16">
-          {[
-            { icon: Github, href: "https://github.com", label: "GitHub Profile" },
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn Profile" },
-            { icon: Twitter, href: "https://twitter.com", label: "Twitter Profile" }
-          ].map((social, index) => (
+          {socialPlatforms.map((social, index) => (
             <a 
               key={index}
               href={social.href}
-              aria-label={social.label}
+              aria-label={social.name}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-portfolio-gray hover:text-portfolio-primary"

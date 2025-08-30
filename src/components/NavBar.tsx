@@ -31,7 +31,7 @@ const NavBar = () => {
     >
       <div className="container flex justify-between items-center">
         <a href="#" className="text-2xl font-bold text-portfolio-primary">
-          Dev<span className="text-portfolio-secondary">Portfolio</span>
+          Portfolio
         </a>
 
         {/* Desktop Navigation */}
