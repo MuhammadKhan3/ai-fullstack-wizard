@@ -9,7 +9,6 @@ const ProjectsSection = () => {
   
   const filters = [
     { id: "all", label: "All Projects" },
-    { id: "ai", label: "AI Projects" },
     { id: "web", label: "Web Apps" },
     { id: "pos", label: "POS Systems" },
   ];
@@ -52,7 +51,7 @@ const ProjectsSection = () => {
               id={project.id}
               title={project.title}
               shortDescription={project.shortDescription}
-              description={project.description}
+              description={project.features}
               techStack={project.techStack}
               image={project.image}
             />
