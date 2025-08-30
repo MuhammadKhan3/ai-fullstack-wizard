@@ -53,22 +53,7 @@ const SkillsSection = () => {
         { name: "Jira", level: 80 },
         { name: "Figma", level: 70 },
       ],
-    },
-    {
-      name: "ai",
-      skills: [
-        { name: "Generative AI", level: 85 },
-        { name: "RAG Systems", level: 80 },
-        { name: "LLM Integration", level: 85 },
-        { name: "AI APIs", level: 90 },
-        { name: "Computer Vision", level: 75 },
-        { name: "Machine Learning", level: 70 },
-        { name: "NLP", level: 75 },
-        { name: "AI Chatbots", level: 90 },
-        { name: "Vector Databases", level: 80 },
-        { name: "LangChain", level: 75 },
-      ],
-    },
+    }
   ];
   
   return (
@@ -126,7 +111,7 @@ const SkillsSection = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+        {/* <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold mb-6 text-center">Achievements</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
@@ -146,7 +131,7 @@ const SkillsSection = () => {
               <p className="text-lg">Years of Experience</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

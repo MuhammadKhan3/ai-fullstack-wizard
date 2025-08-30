@@ -1,4 +1,5 @@
 
+import { socialPlatforms } from "@/constants";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
@@ -42,14 +43,10 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-3">Social</h3>
               <div className="flex flex-col space-y-2">
-                {[
-                  { name: "GitHub", link: "#" },
-                  { name: "LinkedIn", link: "#" },
-                  { name: "Twitter", link: "#" },
-                ].map((item) => (
+                {socialPlatforms.map((item) => (
                   <a
                     key={item.name}
-                    href={item.link}
+                    href={item.href}
                     className="text-gray-300 hover:text-white transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"

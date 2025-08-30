@@ -25,7 +25,7 @@ const ProfilePicture = ({
   return (
     <div className={`rounded-full p-1 bg-gradient-to-r from-portfolio-primary to-portfolio-accent ${className}`}>
       <Avatar className={`${sizeClasses[size]} border-4 border-white`}>
-        <AvatarImage src={src} alt={alt} />
+        <AvatarImage src={'./profile.png'} className="object-cover  object-top w-full h-full" alt={alt} />
         <AvatarFallback className="bg-portfolio-primary/10 text-portfolio-primary">
           <User className="h-12 w-12" />
         </AvatarFallback>
