@@ -27,6 +27,12 @@ Beyond basic data extraction, the system is capable of handling **millions of re
     ],
     techStack: ["Next.js", "Supabase", "Database Functions", "Square API", "Toast Integration", "CSV Export"],
     image: "/projects/square-pos/one.png",
+    images: [
+      "/projects/square-pos/one.png",
+      "/projects/square-pos/two.png",
+      "/projects/square-pos/three.png",
+      "/projects/square-pos/four.png"
+    ],
     results: [
       "Enabled restaurants to securely authenticate POS systems without backend complexity",
       "Automated data retrieval reduced manual processing time significantly",
@@ -81,6 +87,11 @@ The final product is a production-ready, high-performance business registry plat
     ],
     techStack: ["FastAPI", "React.js", "Tailwind CSS", "SQLAlchemy", "Python", "AWS (WAF, S3, EC2)", "Veriff", "Skribble", "Google OAuth", "Zendesk", "SendGrid"],
     image: "/projects/lumaya/three.png",
+    images: [
+      "/projects/lumaya/three.png",
+      "/projects/lumaya/one.png",
+      "/projects/lumaya/two.png"
+    ],
     results: [
       "Secure, production-grade business registry platform",
       "End-to-end verified business transactions",
@@ -111,6 +122,10 @@ The backend was built with **FastAPI** for high-performance API delivery, while 
     ],
     techStack: ["Python", "FastAPI", "Next.js", "PostgreSQL", "Webpack", "WebSockets", "Vector Embeddings"],
     image: "/projects/hashbot/one.png",
+    images: [
+      "/projects/hashbot/one.png",
+      "/projects/hashbot/two.png"
+    ],
     results: [
       "Delivered real-time, contextually accurate chatbot responses",
       "Enabled quick website integration via SDK",
@@ -119,7 +134,7 @@ The backend was built with **FastAPI** for high-performance API delivery, while 
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "Restaurant POS System",
     shortDescription: "Comprehensive POS system for 500+ restaurant locations with advanced order management features.",
     fullDescription: `The POS system is designed for restaurants, managing orders, staff shifts, payments, and kitchen operations. It supports shift check-ins/outs, custom item additions, multi-role access, and advanced printing for kitchen and counter staff. Integrated with mobile apps for online orders, it handles payments (cash, card, split), barcode scanning, and invoice generation. The system also assigns deliveries, tracks kitchen items, and displays orders in real-time. This scalable solution is running in 500+ locations, optimizing restaurant workflows for improved efficiency and accuracy.
@@ -137,6 +152,14 @@ This comprehensive solution streamlines restaurant operations across multiple lo
     ],
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Payment Terminal Integration", "Printing Systems", "Mobile App Integration"],
     image: "/projects/pos/one.png",
+    images: [
+      "/projects/pos/one.png",
+      "/projects/pos/two.png",
+      "/projects/pos/three.png",
+      "/projects/pos/four.png",
+      "/projects/pos/five.png",
+      "/projects/pos/six.png"
+    ],
     results: [
       "Scalable Operations: Successfully deployed across 500+ restaurant locations",
       "Improved Efficiency: Streamlined workflows reduced order processing time by 40%",
@@ -179,11 +202,117 @@ I developed Shorty, a sleek and fully functional Google Chrome Extension using R
     ],
     techStack: ["React.js", "Chrome Extension APIs", "Tailwind CSS", "LocalStorage", "Supabase", "Google APIs"],
     image: "/projects/shorty/one.png",
+    images: [
+      "/projects/shorty/one.png",
+      "/projects/shorty/two.png",
+      "/projects/shorty/three.png",
+      "/projects/shorty/four.png",
+      "/projects/shorty/five.png"
+    ],
     results: [
       "30% improvement in workflow efficiency for active users",
       "Leaderboard with 1000+ users driving engagement",
       "Users learning an average of 15 new shortcuts per month",
       "4.8/5 rating on the Chrome Web Store"
+    ]
+  },
+  {
+    id: 6,
+    title: "Healthcare Management System (Full-Stack SaaS Platform)",
+    shortDescription: "Production-ready healthcare management platform for clinics to streamline patient management, appointments, billing, and administrative workflows.",
+    fullDescription: `**Project Overview:**
+I developed a comprehensive healthcare management system designed for clinics and medical organizations to streamline operations such as patient management, appointments, billing, and administrative workflows.
+
+This is a full-stack, production-ready platform with role-based access, real-time features, and a scalable architecture.
+
+**Skills:** Next.js, NestJS, Node.js, PostgreSQL, TypeScript`,
+    url: "#",
+    features: [
+      "Patient management with centralized records",
+      "Appointment scheduling and management",
+      "Billing and invoicing workflows",
+      "Administrative and operational workflow automation",
+      "Role-based access control for multiple user types",
+      "Real-time features for up-to-date data",
+      "Scalable, production-ready architecture"
+    ],
+    techStack: ["Next.js", "NestJS", "Node.js", "PostgreSQL", "TypeScript"],
+    image: "/projects/healthcare/one.png",
+    images: [
+      "/projects/healthcare/one.png",
+      "/projects/healthcare/two.png",
+      "/projects/healthcare/three.png",
+      "/projects/healthcare/four.png",
+      "/projects/healthcare/five.png",
+      "/projects/healthcare/six.png"
+    ],
+    results: [
+      "Production-ready platform streamlining clinic operations end to end",
+      "Secure, multi-role workflows via role-based access control",
+      "Real-time features keeping patient and appointment data current",
+      "Scalable architecture ready to grow with medical organizations"
+    ]
+  },
+  {
+    id: 7,
+    title: "FirstMovers AI – Learning Management & Community Platform",
+    shortDescription: "Full-stack AI-powered LMS with video courses, RAG chatbot, voice AI, Stripe subscriptions, real-time community, and gamification.",
+    fullDescription: `**Project Overview:**
+A full-stack, AI-powered learning management and community platform combining structured video courses, intelligent AI assistants, payments, real-time community features, and gamification.
+
+🎓 **Course & Learning System**
+- Structured course architecture (Courses → Sections → Content)
+- Video learning with auto progress tracking & resume playback
+- Quizzes, assessments, and completion workflows
+- Downloadable certificates (PDF, PNG)
+
+🤖 **AI Integration**
+- AI chatbot using RAG (context-aware responses)
+- Real-time voice AI assistant
+- Automatic video transcription & subtitles
+- Personalized learning recommendations
+
+💳 **Payments & Subscriptions**
+- Stripe integration for subscriptions & one-time purchases
+- Secure webhook handling & coupon support
+
+👥 **Community & Real-Time Features**
+- Forums with posts, comments, and reactions
+- Real-time chat & notifications (WebSockets)
+- Direct messaging system
+
+🧠 **Gamification**
+- Points system, badges, leaderboard, and streak tracking`,
+    url: "https://labs.firstmovers.ai",
+    features: [
+      "Structured course architecture (Courses → Sections → Content)",
+      "Video learning with auto progress tracking & resume playback",
+      "Quizzes, assessments, and completion workflows",
+      "Downloadable certificates (PDF, PNG)",
+      "AI chatbot using RAG for context-aware responses",
+      "Real-time voice AI assistant",
+      "Automatic video transcription & subtitles",
+      "Personalized learning recommendations",
+      "Stripe subscriptions, one-time purchases, webhooks & coupons",
+      "Forums with posts, comments, and reactions",
+      "Real-time chat, notifications & direct messaging (WebSockets)",
+      "Gamification: points, badges, leaderboard & streak tracking"
+    ],
+    techStack: ["RAG / Vector Embeddings", "Voice AI", "Video Transcription", "Stripe", "WebSockets", "PDF/PNG Certificates"],
+    image: "/projects/rndlabs/one.png",
+    images: [
+      "/projects/rndlabs/one.png",
+      "/projects/rndlabs/two.png",
+      "/projects/rndlabs/three.png",
+      "/projects/rndlabs/four.png",
+      "/projects/rndlabs/five.png",
+      "/projects/rndlabs/six.png"
+    ],
+    results: [
+      "End-to-end learning platform: courses, video, quizzes, and certificates",
+      "AI chatbot (RAG) and real-time voice assistant for context-aware help",
+      "Monetization via Stripe subscriptions, one-time purchases, and coupons",
+      "Engaged community with forums, real-time chat, DMs, and gamification"
     ]
   },
 ];

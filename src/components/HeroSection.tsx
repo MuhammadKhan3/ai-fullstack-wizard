@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, Github, Linkedin, Twitter } from "lucide-react";
 import ProfilePicture from "./ProfilePicture";
+import GlobeVisual from "./fullstack/GlobeVisual";
 import { socialPlatforms } from "@/constants";
 
 const HeroSection = () => {
@@ -43,9 +44,23 @@ const HeroSection = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-b from-white to-blue-50 section-padding pt-24"
+      className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-b from-white to-sky-50 section-padding pt-24"
     >
-      <div className="container mx-auto text-center max-w-4xl">
+      {/* Rotating digital globe backdrop (decorative) */}
+      <GlobeVisual />
+
+      {/* Readability scrim: brightens the center so the globe stays visible at the
+          edges while keeping the headline and text crisp. */}
+      <div
+        className="absolute inset-0 z-[5] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 55% at 50% 45%, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.45) 45%, rgba(255,255,255,0) 78%)",
+        }}
+      />
+
+      <div className="container mx-auto text-center max-w-4xl relative z-10">
         <div className="flex flex-col items-center mb-8">
           <ProfilePicture 
             src="/placeholder.svg" 
@@ -77,7 +92,7 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-10">
           <a 
             href="#projects" 
-            className="bg-portfolio-primary hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-md transition duration-300 shadow-md hover:shadow-lg"
+            className="bg-portfolio-primary hover:bg-sky-600 text-white font-medium py-3 px-8 rounded-md transition duration-300 shadow-md hover:shadow-lg"
           >
             View My Work
           </a>

@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { projects } from "@/constants";
+import ProjectGallery from "@/components/ProjectGallery";
 
 
 const ProjectDetail = () => {
@@ -12,7 +13,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Project not found</h1>
-          <Link to="/" className="text-primary hover:text-secondary">
+          <Link to="/" className="text-primary hover:text-portfolio-secondary">
             Return to homepage
           </Link>
         </div>
@@ -31,7 +32,7 @@ const ProjectDetail = () => {
         <div className="container mx-auto px-4">
           <Link 
             to="/#projects" 
-            className="inline-flex items-center text-primary hover:text-secondary transition-colors mb-4"
+            className="inline-flex items-center text-primary hover:text-portfolio-secondary transition-colors mb-4"
           >
             <ArrowLeft size={20} className="mr-2" />
             Back to Projects
@@ -46,14 +47,11 @@ const ProjectDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Project Image */}
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="w-full h-64 md:h-80 object-cover"
-              />
-            </div>
+            {/* Project Image Gallery */}
+            <ProjectGallery
+              images={project.images && project.images.length ? project.images : [project.image]}
+              title={project.title}
+            />
 
             {/* Description */}
             <section>
@@ -100,7 +98,7 @@ const ProjectDetail = () => {
                 {project.techStack.map((tech) => (
                   <span 
                     key={tech}
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                    className="bg-portfolio-accent/10 text-portfolio-accent px-3 py-1 rounded-full text-sm font-medium"
                   >
                     {tech}
                   </span>
@@ -124,7 +122,7 @@ const ProjectDetail = () => {
             </div>
 
             {/* Contact CTA */}
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-6">
+            <div className="bg-gradient-to-br from-portfolio-primary/10 to-portfolio-accent/10 border border-primary/20 rounded-xl p-6">
               <h3 className="text-xl font-bold mb-2 text-foreground">Interested in Similar Work?</h3>
               <p className="text-muted-foreground mb-4 text-sm">
                 Let's discuss how I can help bring your project ideas to life.

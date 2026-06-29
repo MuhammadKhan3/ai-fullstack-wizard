@@ -61,7 +61,7 @@ const SkillsSection = () => {
       <div className="container mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
-          <div className="h-1 w-20 bg-portfolio-primary mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-gradient-to-r from-portfolio-primary to-portfolio-accent rounded-full mx-auto mb-6"></div>
           <p className="text-lg text-portfolio-gray max-w-3xl mx-auto">
             I've honed my skills across various technologies and domains. Here's a comprehensive overview
             of my technical expertise.

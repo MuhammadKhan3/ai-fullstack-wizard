@@ -65,12 +65,13 @@ export default {
 				},
 				// Custom portfolio colors
 				portfolio: {
-					primary: '#0ea5e9',    // Bright blue
-					secondary: '#0c4a6e',  // Deep blue
-					accent: '#22d3ee',     // Teal accent
-					dark: '#0f172a',       // Dark background
+					primary: '#0ea5e9',    // Sky blue  -> primary actions, links, CTAs
+					secondary: '#0c4a6e',  // Deep navy -> depth, dark accents
+					accent: '#7c3aed',     // Violet    -> highlights, badges, gradient ends
+					success: '#10b981',    // Emerald   -> success / availability (semantic)
+					dark: '#0f172a',       // Dark background / headings
 					light: '#f8fafc',      // Light background
-					gray: '#64748b',       // Neutral gray
+					gray: '#64748b',       // Neutral gray -> body text
 				}
 			},
 			borderRadius: {

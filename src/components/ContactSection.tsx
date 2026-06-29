@@ -105,7 +105,7 @@ const ContactSection = () => {
                 <p className="text-portfolio-gray mb-4">
                   I'm currently available for  full-time positions.
                 </p>
-                <div className="bg-green-100 text-green-800 px-4 py-3 rounded-lg text-sm">
+                <div className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-3 rounded-lg text-sm">
                   <span className="font-medium">Currently Available</span> - Ready to start your project!
                 </div>
               </div>
@@ -182,7 +182,7 @@ const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`flex items-center justify-center bg-portfolio-primary hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-md transition duration-300 shadow-md hover:shadow-lg ${
+                  className={`flex items-center justify-center bg-portfolio-primary hover:bg-sky-600 text-white font-medium py-3 px-8 rounded-md transition duration-300 shadow-md hover:shadow-lg ${
                     isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                 >
