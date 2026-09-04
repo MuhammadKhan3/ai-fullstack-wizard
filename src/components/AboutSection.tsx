@@ -64,17 +64,20 @@ const AboutSection = () => {
                 <span className="text-primary font-semibold">✅ Website Development</span>
               </div>
               <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
-                <span className="text-primary font-semibold">✅ 2.5+ Years of Experience</span>
+                <span className="text-primary font-semibold">✅ 3.5+ Years of Experience</span>
               </div>
               {/* <div className="bg-primary/10 border border-primary/30 px-4 py-2 rounded-full">
                 <span className="text-primary font-semibold">✅ 20 Projects Completed</span>
               </div> */}
             </div>
             <p className="text-lg text-foreground/80 font-medium leading-relaxed">
-            I’m a Full-Stack Developer with 2.5 years of experience building fast, scalable web applications and backend systems. I work with
-            modern tools like React, Next.js, Node.js, TypeScript, and Python. I’ve developed POS  printing module, POS reporting
-            dashboard, HRMS platform,admin portal,SDK, Chrome extension, and real-time chat apps, with some experience
-            in aws and third-party integrations
+              I'm a Full Stack Developer with 3.5+ years of experience building scalable, responsive, and production-ready web applications, backend systems, and business platforms. I specialize in REST APIs, third-party integrations, real-time applications, SDKs, AI-powered solutions, and enterprise systems.
+              <br />
+              <br />
+              I've worked across POS printing modules & reporting dashboards, HRMS platforms, ERP/business management systems, admin portals, custom SDKs, Chrome extensions, real-time chat applications, EHR systems, inventory & asset management, and e-commerce platforms — spanning both modern JavaScript/TypeScript ecosystems (React, Next.js, Node.js, NestJS) and enterprise .NET applications (C#, ASP.NET Core MVC).
+              <br />
+              <br />
+              I care about clean, maintainable architecture and turning business requirements into technical solutions that actually hold up in production.
             </p>
             <div className="flex justify-center">
               <a href="mailto:muhammadkh303@gmail.com" className="text-primary hover:text-portfolio-secondary transition-colors font-medium">
@@ -89,12 +92,6 @@ const AboutSection = () => {
             <div className="hidden md:block mb-6">
               <ProfilePicture size="lg" className="shadow-xl" />
             </div>
-            
-            <p className="text-lg">
-              As a certified developer, I specialize in creating responsive web applications and robust backend systems.
-              My expertise spans monolithic architectures, microservices, and AI-powered systems,
-              delivering impactful results across a wide range of industries.
-            </p>
             
             <div className="grid grid-cols-2 gap-6 w-full mt-8">
               {[
@@ -163,30 +160,30 @@ const AboutSection = () => {
                       transition: { duration: 0.5, ease: "easeOut" },
                     })}
               >
-                Key Expertise
+                How I Deliver
               </motion.h3>
 
               <motion.div className="space-y-6" variants={containerVariants} {...reveal}>
                 {[
                   {
                     icon: Briefcase,
-                    title: "Full Stack Development",
-                    description: "Proficient in React.js, Node.js, Express.js, MySQL, and MongoDB, with expertise in creating responsive and user-friendly applications."
+                    title: "Full Ownership",
+                    description: "I take a project from architecture to deployment, so there's no handoff friction between design, backend, and frontend."
                   },
                   {
                     icon: Database,
-                    title: "Database Management",
-                    description: "Proficient in MySQL,PostgreSQL, MongoDB, and database optimization for high-performance applications."
+                    title: "Data You Can Trust",
+                    description: "Schemas and queries designed to stay fast and reliable as records grow into the millions, not just in a demo."
                   },
                   {
                     icon: Gift,
-                    title: "SaaS Platforms",
-                    description: "Built scalable  platforms tailored to business needs."
+                    title: "Built Around the Business",
+                    description: "Platforms shaped around how the business actually operates, not a generic template bolted onto real workflows."
                   },
                   {
                     icon: Clock,
-                    title: "Cloud Deployment",
-                    description: "Experience with AWS, Google Cloud Functions, and serverless architectures."
+                    title: "Production-Grade",
+                    description: "Deployment and infrastructure choices that hold up under real traffic and real users, not just a local build."
                   }
                 ].map((item, index) => (
                   <motion.div
@@ -209,62 +206,6 @@ const AboutSection = () => {
                 ))}
               </motion.div>
             </div>
-          </div>
-        </div>
-
-        {/* Project Highlights Section */}
-        <div className="mt-16 bg-gradient-to-r from-portfolio-primary/10 to-portfolio-accent/10 rounded-2xl p-8 border border-primary/20">
-          <h3 className="text-2xl font-bold text-center mb-8 text-primary">🌟 Highlights of My Work</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "POS System Optimization",
-                description: "Enhanced a POS system to support 1,000+ retail locations, managing 1 million requests efficiently.",
-                icon: "🏪"
-              },
-              {
-                title: "AI ChatBot SDK",
-                description: "Designed a flexible AI ChatBot SDK that integrates into websites, providing intelligent and responsive interactions.",
-                icon: "🤖"
-              },
-              {
-                title: "Gaming Solution",
-                description: "Developed a real-time axe-throw computer vision detection system integrated with an admin portal.",
-                icon: "🎯"
-              },
-              {
-                title: "Reporting Tool",
-                description: "Reporting tool for restaurants to authenticate POS systems, export transaction data, and manage millions of records with advanced dashboards",
-                icon: "📅"
-              }
-            ].map((project, index) => (
-              <div key={index} className="bg-card border border-primary/30 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
-                <div className="flex items-start space-x-4">
-                  <span className="text-3xl">{project.icon}</span>
-                  <div>
-                    <h4 className="font-semibold text-lg text-primary mb-2">{project.title}</h4>
-                    <p className="text-foreground/80 text-sm leading-relaxed">{project.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Achievements Section */}
-        <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold mb-6 text-primary">🏆 Achievements</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              "Delivered 15+ successful projects completed",
-              "Designed systems capable of handling 1 million+ transactions", 
-              "Delivered 2 AI solutions, including legal assistants, ChatBots and personalized sizing systems"
-            ].map((achievement, index) => (
-              <div key={index} className="bg-primary/10 border border-primary/30 rounded-lg p-6 shadow-md backdrop-blur-sm">
-                <div className="text-2xl mb-3">🚀</div>
-                <p className="text-foreground/90 font-medium">{achievement}</p>
-              </div>
-            ))}
           </div>
         </div>
       </div>

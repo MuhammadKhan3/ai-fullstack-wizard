@@ -85,8 +85,7 @@ const HeroSection = () => {
         </div>
         
         <p className="text-lg md:text-xl text-portfolio-gray mb-10 max-w-2xl mx-auto">
-          With over 2.5 years of experience in building robust and scalable solutions.
-          Specializing in MERN stack, Python systems.
+          Building scalable, production-ready web applications and backend systems with React, Next.js, Node.js, and Python.
         </p>
         
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-10">

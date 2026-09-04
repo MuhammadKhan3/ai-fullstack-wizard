@@ -1,5 +1,5 @@
 
-import { socialPlatforms } from "@/constants";
+import { socialPlatforms, navItems } from "@/constants";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
@@ -19,8 +19,8 @@ const Footer = () => {
               Dev<span className="text-portfolio-accent">Portfolio</span>
             </a>
             <p className="mt-2 text-gray-300 max-w-md">
-              Specializing in full-stack development and AI solutions. 
-              Building scalable applications for businesses worldwide.
+              From POS platforms handling millions of transactions to AI-powered
+              learning tools — built to hold up in production.
             </p>
           </div>
           
@@ -28,7 +28,7 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
               <div className="flex flex-col space-y-2">
-                {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+                {navItems.map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}

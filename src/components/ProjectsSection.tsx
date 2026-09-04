@@ -14,8 +14,7 @@ const ProjectsSection = () => {
     { id: "pos", label: "POS Systems" },
   ];
 
-  // In a real implementation, we would filter based on tags in the project data
-  const filteredProjects = projects;
+  const filteredProjects = filter === "all" ? projects : projects.filter((project) => project.category === filter);
 
   const headerReveal = reduceMotion
     ? {}
@@ -55,7 +54,7 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.id}

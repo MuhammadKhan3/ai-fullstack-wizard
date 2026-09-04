@@ -3,6 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 export const projects = [
   {
     id: 1,
+    category: "pos",
     title: "Square / Toast POS Integration & Analytics Dashboard",
     url: "https://pos.letsgetoffline.com/connections",
     shortDescription: "Lightweight tool for restaurants to authenticate POS systems, export transaction data, and manage millions of records with advanced dashboards.",
@@ -43,6 +44,7 @@ Beyond basic data extraction, the system is capable of handling **millions of re
 
   {
     id: 2,
+    category: "web",
     title: "Lumaya Business Register",
     shortDescription: "Secure and scalable platform for entrepreneurs to connect, verify, and complete business transactions.",
     fullDescription: `**Project Overview:**  
@@ -101,6 +103,7 @@ The final product is a production-ready, high-performance business registry plat
   },
   {
     id: 3,
+    category: "web",
     title: "Hashbot AI Platform & SDK",
     shortDescription: "AI-driven chatbot platform using vector embeddings for context-aware responses with real-time communication and easy integration.",
     fullDescription: `**Introduction**  
@@ -135,6 +138,7 @@ The backend was built with **FastAPI** for high-performance API delivery, while 
   },
   {
     id: 4,
+    category: "pos",
     title: "Restaurant POS System",
     shortDescription: "Comprehensive POS system for 500+ restaurant locations with advanced order management features.",
     fullDescription: `The POS system is designed for restaurants, managing orders, staff shifts, payments, and kitchen operations. It supports shift check-ins/outs, custom item additions, multi-role access, and advanced printing for kitchen and counter staff. Integrated with mobile apps for online orders, it handles payments (cash, card, split), barcode scanning, and invoice generation. The system also assigns deliveries, tracks kitchen items, and displays orders in real-time. This scalable solution is running in 500+ locations, optimizing restaurant workflows for improved efficiency and accuracy.
@@ -169,6 +173,7 @@ This comprehensive solution streamlines restaurant operations across multiple lo
   },
   {
     id: 5,
+    category: "web",
     title: "Shorty Keyboard Shortcut Tracker",
     shortDescription: "Chrome extension that tracks and gamifies keyboard shortcut usage with real-time stats and leaderboards.",
     fullDescription: `📝 **Project Overview:**  
@@ -218,6 +223,7 @@ I developed Shorty, a sleek and fully functional Google Chrome Extension using R
   },
   {
     id: 6,
+    category: "web",
     title: "Healthcare Management System (Full-Stack SaaS Platform)",
     shortDescription: "Production-ready healthcare management platform for clinics to streamline patient management, appointments, billing, and administrative workflows.",
     fullDescription: `**Project Overview:**
@@ -255,6 +261,7 @@ This is a full-stack, production-ready platform with role-based access, real-tim
   },
   {
     id: 7,
+    category: "web",
     title: "FirstMovers AI – Learning Management & Community Platform",
     shortDescription: "Full-stack AI-powered LMS with video courses, RAG chatbot, voice AI, Stripe subscriptions, real-time community, and gamification.",
     fullDescription: `**Project Overview:**
@@ -319,3 +326,5 @@ A full-stack, AI-powered learning management and community platform combining st
 
 
 export const socialPlatforms=[{icon: Github,name:"GitHub",href:'https://github.com/MuhammadKhan3'}, { icon: Linkedin,name:"LinkedIn",href:"https://www.linkedin.com/in/muhammad-ahmad-khan-fullstackdeveloper/"}]
+
+export const navItems = ["Home", "About", "Skills", "Projects", "Contact"];

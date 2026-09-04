@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { navItems } from "@/constants";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +37,7 @@ const NavBar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+          {navItems.map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`} 
@@ -61,7 +62,7 @@ const NavBar = () => {
       {isMenuOpen && (
         <nav className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-lg animate-fade-in">
           <div className="flex flex-col py-4">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+            {navItems.map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 

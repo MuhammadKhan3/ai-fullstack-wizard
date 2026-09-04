@@ -65,7 +65,7 @@ const ContactSection = () => {
                   <Mail className="text-portfolio-primary mt-1 flex-shrink-0" size={24} />
                   <div>
                     <h4 className="font-medium text-lg mb-1">Email</h4>
-                    <a href="mailto:contact@example.com" className="text-portfolio-gray hover:text-portfolio-primary transition-colors">
+                    <a href="mailto:muhammadkh303@gmail.com" className="text-portfolio-gray hover:text-portfolio-primary transition-colors">
                       muhammadkh303@gmail.com
                     </a>
                   </div>
