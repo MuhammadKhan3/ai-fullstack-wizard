@@ -106,11 +106,7 @@ const HeroSection = () => {
         {/* Business-facing value statement */}
         <div className="mb-10 flex flex-col items-center gap-4">
           {/* Audience pill */}
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-portfolio-primary/30 bg-portfolio-primary/8 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-portfolio-primary">
-            <span className="h-1.5 w-1.5 rounded-full bg-portfolio-primary animate-pulse" />
-            For Startups &amp; Growing Businesses
-          </span>
-
+     
           {/* Bold value headline */}
           <p className="text-xl md:text-2xl font-semibold text-portfolio-secondary max-w-2xl leading-snug">
             I turn your{" "}
