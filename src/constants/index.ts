@@ -393,3 +393,58 @@ Ops-One is a full-stack operations management platform built to run a facility's
 export const socialPlatforms=[{icon: Github,name:"GitHub",href:'https://github.com/MuhammadKhan3'}, { icon: Linkedin,name:"LinkedIn",href:"https://www.linkedin.com/in/muhammad-ahmad-khan-fullstackdeveloper/"}]
 
 export const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
+
+// The single source of truth for the meeting timezone. Update these two
+// values together if the configured meeting timezone ever changes.
+export const MEETING_TIMEZONE = "Asia/Karachi";
+export const MEETING_TIMEZONE_ABBR = "PKT, UTC+5";
+export const MEETING_TIMEZONE_LABEL = "Pakistan Standard Time (PKT, UTC+5)";
+
+export interface MeetingSlot {
+  /** Wall-clock date in MEETING_TIMEZONE, e.g. "2026-09-08" */
+  date: string;
+  /** Wall-clock 24h start time in MEETING_TIMEZONE, e.g. "15:00" */
+  startTime: string;
+  /** Wall-clock 24h end time in MEETING_TIMEZONE, e.g. "15:30" */
+  endTime: string;
+}
+
+// Meetings are open 24/7 - every day is broken into fixed-length slots
+// covering the full 24 hours, in MEETING_TIMEZONE.
+export const MEETING_SLOT_DURATION_MINUTES = 60;
+
+// Add an entry here to close off a specific slot on a specific date
+// (e.g. it's already booked) without touching the 24/7 schedule itself.
+export const blockedMeetingSlots: MeetingSlot[] = [];
+
+function formatMinutesAsTime(totalMinutes: number) {
+  const hours = Math.floor(totalMinutes / 60) % 24;
+  const minutes = totalMinutes % 60;
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+}
+
+export function getDailyTimeSlots(
+  durationMinutes: number = MEETING_SLOT_DURATION_MINUTES
+): Array<Pick<MeetingSlot, "startTime" | "endTime">> {
+  const slots: Array<Pick<MeetingSlot, "startTime" | "endTime">> = [];
+  for (let start = 0; start < 24 * 60; start += durationMinutes) {
+    slots.push({
+      startTime: formatMinutesAsTime(start),
+      endTime: formatMinutesAsTime(start + durationMinutes),
+    });
+  }
+  return slots;
+}
+
+export function getMeetingSlotsForDate(date: string): MeetingSlot[] {
+  return getDailyTimeSlots().reduce<MeetingSlot[]>((slots, slot) => {
+    const isBlocked = blockedMeetingSlots.some(
+      (blocked) =>
+        blocked.date === date &&
+        blocked.startTime === slot.startTime &&
+        blocked.endTime === slot.endTime
+    );
+    if (!isBlocked) slots.push({ date, ...slot });
+    return slots;
+  }, []);
+}

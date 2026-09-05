@@ -1,9 +1,11 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, MapPin, Send, MessageSquare } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { socialPlatforms } from "@/constants";
+import MeetingScheduler, {
+  type MeetingRequestDetails,
+} from "@/components/MeetingScheduler";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -13,7 +15,9 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+  const [selectedMeeting, setSelectedMeeting] = useState<MeetingRequestDetails | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resetKey, setResetKey] = useState(0);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,19 +30,35 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const note = formData.message.trim();
+    const message = selectedMeeting
+      ? `${selectedMeeting.summary}${note ? `\n\nAdditional note: ${note}` : ""}`
+      : formData.message;
+    const subject = formData.subject || (selectedMeeting ? "Meeting Request" : "");
+
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formData,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject,
+          message,
+          meeting_date: selectedMeeting?.date ?? "",
+          meeting_time: selectedMeeting?.time ?? "",
+          meeting_timezone: selectedMeeting?.timezone ?? "",
+        },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         toast({
-          title: "Message Sent!",
+          title: selectedMeeting ? "Meeting Requested!" : "Message Sent!",
           description: "Thanks for reaching out. I'll get back to you soon.",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
+        setSelectedMeeting(null);
+        setResetKey((key) => key + 1);
       })
       .catch(() => {
         toast({
@@ -57,16 +77,15 @@ const ContactSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-portfolio-primary mx-auto mb-6"></div>
           <p className="text-lg text-portfolio-gray max-w-3xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities? 
-            I'm always open to new ideas and collaborations. Let's connect!
+            Choose a convenient date and time to schedule a meeting, or send a message directly.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-md p-8 h-full">
               <h3 className="text-2xl font-bold mb-6 heading-gradient">Contact Info</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <Mail className="text-portfolio-primary mt-1 flex-shrink-0" size={24} />
@@ -77,36 +96,8 @@ const ContactSection = () => {
                     </a>
                   </div>
                 </div>
-                
-                <div className="flex items-start space-x-4">
-                  <MapPin className="text-portfolio-primary mt-1 flex-shrink-0" size={24} />
-                  <div>
-                    <h4 className="font-medium text-lg mb-1">Location</h4>
-                    <p className="text-portfolio-gray">
-                      Available for work worldwide
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <MessageSquare className="text-portfolio-primary mt-1 flex-shrink-0" size={24} />
-                  <div>
-                    <h4 className="font-medium text-lg mb-1">Social</h4>
-                    <div className="flex space-x-4 mt-2">
-                      {socialPlatforms.map((platform:{href:string,name:string}) => (
-                        <a
-                          key={platform.href}
-                          href="#"
-                          className="text-portfolio-gray hover:text-portfolio-primary transition-colors"
-                        >
-                          {platform.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
               </div>
-              
+
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <h4 className="font-medium text-lg mb-3">Availability</h4>
                 <p className="text-portfolio-gray mb-4">
@@ -118,12 +109,16 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl shadow-md p-8">
-              <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <h3 className="text-2xl font-bold mb-2">Schedule a Meeting</h3>
+              <p className="text-portfolio-gray mb-6">
+                Pick an available date and time below, or skip ahead and just send a message.
+              </p>
+              <MeetingScheduler key={resetKey} onSlotChange={setSelectedMeeting} />
+
+              <form onSubmit={handleSubmit} className="space-y-6 border-t border-gray-100 mt-8 pt-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -139,7 +134,7 @@ const ContactSection = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-portfolio-primary focus:border-portfolio-primary"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Your Email
@@ -155,7 +150,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                     Subject
@@ -166,14 +161,15 @@ const ContactSection = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    required
+                    placeholder={selectedMeeting ? "Meeting Request" : undefined}
+                    required={!selectedMeeting}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-portfolio-primary focus:border-portfolio-primary"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Message
+                    {selectedMeeting ? "Additional Note (optional)" : "Your Message"}
                   </label>
                   <textarea
                     id="message"
@@ -181,11 +177,16 @@ const ContactSection = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    required
+                    required={!selectedMeeting}
+                    placeholder={
+                      selectedMeeting
+                        ? "Anything you'd like to add before the meeting?"
+                        : undefined
+                    }
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-portfolio-primary focus:border-portfolio-primary"
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -197,7 +198,7 @@ const ContactSection = () => {
                     <>Sending...</>
                   ) : (
                     <>
-                      <span>Send Message</span>
+                      <span>{selectedMeeting ? "Request Meeting" : "Send Message"}</span>
                       <Send size={16} className="ml-2" />
                     </>
                   )}
