@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { socialPlatforms } from "@/constants";
@@ -24,23 +25,29 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-      
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-      
-      setIsSubmitting(false);
-    }, 1500);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch(() => {
+        toast({
+          title: "Message Failed to Send",
+          description: "Something went wrong. Please email me directly instead.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
