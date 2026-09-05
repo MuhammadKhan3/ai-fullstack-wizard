@@ -1,7 +1,6 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { ChevronDown, Github, Linkedin, Twitter } from "lucide-react";
-import ProfilePicture from "./ProfilePicture";
 import ProjectOrbitVisual from "./fullstack/ProjectOrbitVisual";
 import type { OrbitProject } from "./fullstack/ProjectOrbitScene";
 import { socialPlatforms, projects } from "@/constants";
@@ -58,8 +57,8 @@ const HeroSection = () => {
       id="home" 
       className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-b from-white to-sky-50 section-padding pt-24"
     >
-      {/* Rotating dot globe backdrop with orbiting project images (decorative) */}
-      <ProjectOrbitVisual projects={orbitProjects} onHoverProject={setHoveredProject} />
+      {/* Rotating dot globe backdrop with orbiting project images + profile picture */}
+      <ProjectOrbitVisual projects={orbitProjects} profileImage="./profile.png" onHoverProject={setHoveredProject} />
 
       {/* Readability scrim: brightens the center so the scene stays visible at the
           edges while keeping the headline and text crisp. */}
@@ -89,13 +88,6 @@ const HeroSection = () => {
 
       <div className="container mx-auto text-center max-w-4xl relative z-10">
         <div className="flex flex-col items-center mb-8">
-          <ProfilePicture
-            src="/placeholder.svg"
-            alt="Developer Profile"
-            size="md"
-            className="mb-6 shadow-lg animate-fade-in"
-          />
-
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             Hi, I'm <span className="heading-gradient">A Certified Developer</span>
           </h1>
