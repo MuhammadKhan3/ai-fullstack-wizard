@@ -22,6 +22,7 @@ const SkillsSection = () => {
         { name: "Tailwind CSS", level: 85 },
         { name: "Bootstrap", level: 80 },
         { name: "Ant Design", level: 75 },
+        { name: "shadcn/ui", level: 85 },
       ],
     },
     {
@@ -32,10 +33,11 @@ const SkillsSection = () => {
         { name: "Nest.js", level: 80 },
         { name: "Python", level: 85 },
         { name: "Fast API", level: 80 },
+        { name: ".NET / C#", level: 75 },
         { name: "MySQL", level: 85 },
         { name: "MongoDB", level: 90 },
-        { name: "Mongoose", level: 85 },
         { name: "PostgreSQL", level: 80 },
+        { name: "SQL Server", level: 75 },
         { name: "SQLite", level: 75 },
       ],
     },
@@ -52,6 +54,7 @@ const SkillsSection = () => {
         { name: "Agile/Scrum", level: 85 },
         { name: "Jira", level: 80 },
         { name: "Figma", level: 70 },
+        { name: "RAG / Agentic AI", level: 85 },
       ],
     }
   ];
