@@ -161,7 +161,9 @@ function Orbit() {
 }
 
 // Rotating globe group with subtle pointer parallax + a gentle bob.
-function Globe() {
+// Exported so other scenes (e.g. ProjectOrbitScene) can reuse the same
+// ambient dot/atmosphere animation instead of duplicating it.
+export function Globe() {
   const group = useRef<THREE.Group>(null);
 
   useFrame((state, delta) => {

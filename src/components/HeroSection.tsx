@@ -1,12 +1,24 @@
 
-import { useState, useEffect } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { ChevronDown, Github, Linkedin, Twitter } from "lucide-react";
 import ProfilePicture from "./ProfilePicture";
-import GlobeVisual from "./fullstack/GlobeVisual";
-import { socialPlatforms } from "@/constants";
+import ProjectOrbitVisual from "./fullstack/ProjectOrbitVisual";
+import type { OrbitProject } from "./fullstack/ProjectOrbitScene";
+import { socialPlatforms, projects } from "@/constants";
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState("");
+  const [hoveredProject, setHoveredProject] = useState<OrbitProject | null>(null);
+  const orbitProjects: OrbitProject[] = useMemo(
+    () =>
+      projects.slice(0, 6).map((project) => ({
+        id: project.id,
+        title: project.title,
+        shortDescription: project.shortDescription,
+        image: project.image,
+      })),
+    []
+  );
   const roles = ["Full Stack Developer","Python Developer"];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -46,10 +58,10 @@ const HeroSection = () => {
       id="home" 
       className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-b from-white to-sky-50 section-padding pt-24"
     >
-      {/* Rotating digital globe backdrop (decorative) */}
-      <GlobeVisual />
+      {/* Rotating dot globe backdrop with orbiting project images (decorative) */}
+      <ProjectOrbitVisual projects={orbitProjects} onHoverProject={setHoveredProject} />
 
-      {/* Readability scrim: brightens the center so the globe stays visible at the
+      {/* Readability scrim: brightens the center so the scene stays visible at the
           edges while keeping the headline and text crisp. */}
       <div
         className="absolute inset-0 z-[5] pointer-events-none"
@@ -60,15 +72,30 @@ const HeroSection = () => {
         }}
       />
 
+      {/* Hovered project info panel - fades in above the orbit, mirrors what's under the pointer */}
+      <div
+        className={`absolute top-6 left-0 right-0 z-[6] flex justify-center px-4 pointer-events-none transition-opacity duration-300 ${
+          hoveredProject ? "opacity-100" : "opacity-0"
+        }`}
+        aria-live="polite"
+      >
+        {hoveredProject && (
+          <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-xl px-5 py-3 max-w-md text-center border border-portfolio-primary/10">
+            <p className="font-semibold text-portfolio-secondary">{hoveredProject.title}</p>
+            <p className="text-sm text-portfolio-gray">{hoveredProject.shortDescription}</p>
+          </div>
+        )}
+      </div>
+
       <div className="container mx-auto text-center max-w-4xl relative z-10">
         <div className="flex flex-col items-center mb-8">
-          <ProfilePicture 
-            src="/placeholder.svg" 
+          <ProfilePicture
+            src="/placeholder.svg"
             alt="Developer Profile"
-            size="xl"
+            size="md"
             className="mb-6 shadow-lg animate-fade-in"
           />
-          
+
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             Hi, I'm <span className="heading-gradient">A Certified Developer</span>
           </h1>
