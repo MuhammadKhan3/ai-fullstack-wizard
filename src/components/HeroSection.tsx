@@ -103,10 +103,39 @@ const HeroSection = () => {
           </span>
         </div>
         
-        <p className="text-lg md:text-xl text-portfolio-gray mb-10 max-w-2xl mx-auto">
-          Turning your business ideas into scalable, production-ready digital products.
-        </p>
-        
+        {/* Business-facing value statement */}
+        <div className="mb-10 flex flex-col items-center gap-4">
+          {/* Audience pill */}
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-portfolio-primary/30 bg-portfolio-primary/8 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-portfolio-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-portfolio-primary animate-pulse" />
+            For Startups &amp; Growing Businesses
+          </span>
+
+          {/* Bold value headline */}
+          <p className="text-xl md:text-2xl font-semibold text-portfolio-secondary max-w-2xl leading-snug">
+            I turn your{" "}
+            <span className="heading-gradient">business idea</span> into a{" "}
+            <span className="heading-gradient">live, revenue-ready product</span>
+            {" "} fast, clean, and built to scale.
+          </p>
+
+          {/* Micro-stats row */}
+          <div className="flex flex-wrap justify-center gap-3 mt-1">
+            {[
+              { value: "ROI-Driven", label: "Every Build" },
+              { value: "100%", label: "Client Satisfaction" },
+              { value: "20+", label: "Products Shipped" },
+            ].map(({ value, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center rounded-xl border border-portfolio-primary/15 bg-white/70 backdrop-blur-sm px-5 py-2 shadow-sm"
+              >
+                <span className="text-lg font-bold heading-gradient leading-none">{value}</span>
+                <span className="text-[11px] text-portfolio-gray font-medium mt-0.5">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-10">
           <a 
             href="#projects" 
