@@ -104,7 +104,7 @@ const HeroSection = () => {
         </div>
         
         <p className="text-lg md:text-xl text-portfolio-gray mb-10 max-w-2xl mx-auto">
-          Building scalable, production-ready web applications and backend systems with React, Next.js, Node.js, and Python.
+          Turning your business ideas into scalable, production-ready digital products.
         </p>
         
         <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-10">
