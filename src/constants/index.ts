@@ -322,6 +322,71 @@ A full-stack, AI-powered learning management and community platform combining st
       "Engaged community with forums, real-time chat, DMs, and gamification"
     ]
   },
+  {
+    id: 8,
+    category: "web",
+    title: "Ops-One — Facility Operations Management Platform",
+    shortDescription: "Internal operations platform unifying procurement, GRN/WCC fulfillment, expense & payment tracking, petty cash, and asset management behind role-based dashboards.",
+    fullDescription: `**Project Overview:**
+Ops-One is a full-stack operations management platform built to run a facility's back-office end to end: procurement requests, vendor quotations, goods receipt/work completion verification, expenses, petty cash, asset lifecycle, and staff reimbursements — all tied together with building-level scoping and role-based access.
+
+**🛒 Procurement & GRN/WCC**
+- Full procurement lifecycle: request → vendor quotations → comparison/recommendation → final approval → PO generation
+- GRN/WCC (Goods Receipt / Work Completion Certificate) step between PO and Expense, with inspection, received quantity, remarks, and Verify/Reject actions
+- Expenses are only created after GRN/WCC verification, preventing payment on rejected or unverified deliveries
+
+**💵 Expense & Payment**
+- Expenses auto-scoped to the requester's building and team ("Charged To"), with override support
+- Partial and multiple payments per expense with Unpaid / Partial / Paid status tracking and full payment history
+- Receipt requirements configurable per payment method, enforced at submission
+- Procurement requests can't be marked Completed until their expense is fully paid
+
+**💰 Petty Cash**
+- Procurement Managers assign petty cash to Facility Managers per building, tracking assigned vs. remaining balance
+- Expenses draw down the assigned petty cash automatically, reflected live on both manager dashboards
+
+**📦 Asset Management**
+- IT Assets and Company Assets with Assigned / Available / Maintenance / My Assets tabs and server-side pagination
+- Asset assignment/unassignment, condition tracking, and recurring maintenance schedules configured per sub-category
+
+**📊 Role-Based Dashboards**
+- Purpose-built dashboards per role — IT Manager, Facility Manager, Procurement Manager, and DOF — each scoped by building and enforced by RBAC so only relevant cards and data are visible
+
+**🧾 Reimbursements & Activity Feed**
+- Employee reimbursement claims with approval workflow and status tracking (Approved / Pending / Rejected)
+- Organization-wide activity feed logging key events across procurement, GRN, expenses, and payments
+
+**Skills:** React, TypeScript, Tailwind CSS, .NET / C#, SQL Server, Role-Based Access Control, Workflow/State Machines`,
+    url: "#",
+    features: [
+      "End-to-end procurement workflow: request → quotation → final approval → PO",
+      "GRN/WCC fulfillment step with inspection, Verify/Reject, and rejection reasons",
+      "Expense creation gated on GRN/WCC verification to prevent paying for rejected deliveries",
+      "Partial/multiple payments with Unpaid, Partial, and Paid status tracking",
+      "Petty cash assignment and balance tracking per building and Facility Manager",
+      "Asset lifecycle management: assignment, condition, and recurring maintenance schedules",
+      "Role-specific dashboards with building-level RBAC for IT, Facility, Procurement, and DOF roles",
+      "Employee reimbursement claims with approval workflow",
+      "Organization-wide activity feed for key operational events"
+    ],
+    techStack: ["React", "TypeScript", "Tailwind CSS", ".NET / C#", "SQL Server", "Role-Based Access Control"],
+    image: "/projects/ops-one/one.png",
+    images: [
+      "/projects/ops-one/one.png",
+      "/projects/ops-one/two.png",
+      "/projects/ops-one/three.png",
+      "/projects/ops-one/four.png",
+      "/projects/ops-one/five.png",
+      "/projects/ops-one/six.png",
+      "/projects/ops-one/seven.png"
+    ],
+    results: [
+      "Consolidated procurement, GRN/WCC, and expense workflows into a single auditable pipeline",
+      "Petty cash and asset visibility per building for Facility and Procurement Managers",
+      "Role-scoped dashboards enforcing RBAC across four distinct operational roles",
+      "Reduced manual reconciliation via automated Unpaid/Partial/Paid payment tracking"
+    ]
+  },
 ];
 
 
